@@ -1,0 +1,41 @@
+openapi: 3.0.0
+
+info:
+  version: 0.0.1
+  title: Library Serivce
+  description: This User api demo
+
+tags:
+  - name: Library
+paths:
+  /library/books:
+    get:
+      summary: This is Library summary
+      tags:
+        - "Library"
+      description: This is description
+      operationId: getAllBooksInLibrary
+      responses:
+        "200":
+          description: This Message ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+
+components:
+  schemas:
+
+    Book:
+      description: Tis is Book Schema
+      type: object
+      properties:
+        name:
+          description: name of the book
+          type: string
+        bookauthor:
+          description: author of the book
+          type: string
+
